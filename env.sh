@@ -7,4 +7,4 @@ while read p; do
     IFS='=' read -ra parts <<< "$p"
     export "${parts[0]}"="${parts[1]}"
   fi
-done < docker/env.list
+done < rails-container-scripts/env.list
