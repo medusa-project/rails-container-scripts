@@ -1,0 +1,6 @@
+# OS junk
+.DS_Store
+Thumbs.db
+
+Dockerfile
+*.list
