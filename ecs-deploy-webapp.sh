@@ -5,7 +5,7 @@
 # insert them into the task pool, and remove the old ones.
 #
 
-source docker/env.sh
+source rails-container-scripts/env.sh
 
 aws ecs update-service \
     --profile $AWS_PROFILE \

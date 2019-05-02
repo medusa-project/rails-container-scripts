@@ -6,7 +6,7 @@ then
     exit 1
 fi
 
-source docker/env.sh
+source rails-container-scripts/env.sh
 
 docker run \
     --env-file env.list \

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source docker/env.sh
+source rails-container-scripts/env.sh
 
-docker build -f docker/Dockerfile \
+docker build -f rails-container-scripts/Dockerfile \
     -t $APP_NAME .

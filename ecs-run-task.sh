@@ -5,7 +5,7 @@
 # See: https://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.html
 #
 
-source docker/env.sh
+source rails-container-scripts/env.sh
 
 if [ -z "$1" ];
   then

@@ -2,8 +2,8 @@
 #
 # Runs the web app locally.
 
-source docker/env.sh
+source rails-container-scripts/env.sh
 
 docker run -p $CONTAINER_PORT:$CONTAINER_PORT -it \
-    --env-file docker/env.list \
+    --env-file rails-container-scripts/env.list \
     $APP_NAME

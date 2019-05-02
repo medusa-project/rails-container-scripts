@@ -11,11 +11,15 @@ A collection of scripts for working with Docker and AWS ECR/ECS.
 
 # Usage
 
-It's intended that this repository be a git submodule located in a `docker`
-folder of your project. Then the scripts can be run from the parent
-(application root) directory.
+From your root application directory:
+
+```
+git submodule add https://github.com/medusa-project/rails-container-scripts
+```
 
 Copy `env.list.sample` to `env.list` and edit as necessary.
+
+Then, the scripts can be run from the parent (application root) directory.
 
 The ones that access AWS use your default profile, which you can set up
 manually by editing the `[default]` section of `~/.aws/credentials`, or,
