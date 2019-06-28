@@ -5,13 +5,14 @@
 # See: https://docs.aws.amazon.com/cli/latest/reference/ecs/run-task.html
 #
 
-source rails-container-scripts/env.sh
-
-if [ -z "$1" ];
-  then
-    echo "Rake command is required. (bin/rails -T for a list)"
-    exit
+if [ $# -lt 2 ]
+then
+    echo "Usage: ecs-run-task.sh <env> <rake task>"
+    exit 1
 fi
+
+source rails-container-scripts/env.sh env-common.list
+source rails-container-scripts/env.sh env-$1.list
 
 aws ecs run-task \
     --launch-type FARGATE \
@@ -20,4 +21,4 @@ aws ecs run-task \
     --cluster $ECS_CLUSTER \
     --task-definition $ECS_CONSOLE_TASK_DEFINITION \
     --network-configuration "awsvpcConfiguration={subnets=[$ECS_SUBNET],securityGroups=[$ECS_SECURITY_GROUP],assignPublicIp=ENABLED}" \
-    --overrides "{ \"containerOverrides\": [ { \"name\": \"$APP_NAME\", \"command\": [ \"bin/rails\", \"$1\" ] } ] }"
+    --overrides "{ \"containerOverrides\": [ { \"name\": \"$APP_NAME\", \"command\": [ \"bin/rails\", \"$2\" ] } ] }"

@@ -1,0 +1,23 @@
+#
+# Contains environment-specific variables.
+#
+# Copy to env-<env name>.list and DO NOT commit that file to version control.
+#
+# Feel free to move variables between env-<env name>.list and env-common.list.
+#
+
+APP_NAME=myapp-env
+
+ECS_CLUSTER=
+ECS_SERVICE=
+ECS_SUBNET=
+ECS_SECURITY_GROUP=
+ECS_WEBAPP_TASK_DEFINITION=
+ECS_WEBAPP_TASK_COUNT=1
+ECS_CONSOLE_TASK_DEFINITION=book-tracker-prod
+
+###########################################
+# Container runtime environment variables
+###########################################
+
+RAILS_ENV=
