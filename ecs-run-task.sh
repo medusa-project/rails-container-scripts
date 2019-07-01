@@ -21,4 +21,4 @@ aws ecs run-task \
     --cluster $ECS_CLUSTER \
     --task-definition $ECS_CONSOLE_TASK_DEFINITION \
     --network-configuration "awsvpcConfiguration={subnets=[$ECS_SUBNET],securityGroups=[$ECS_SECURITY_GROUP],assignPublicIp=ENABLED}" \
-    --overrides "{ \"containerOverrides\": [ { \"name\": \"$APP_NAME\", \"command\": [ \"bin/rails\", \"$2\" ] } ] }"
+    --overrides "{ \"containerOverrides\": [ { \"name\": \"$IMAGE_NAME\", \"command\": [ \"bin/rails\", \"$2\" ] } ] }"
