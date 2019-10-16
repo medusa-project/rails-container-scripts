@@ -19,6 +19,7 @@ aws ecs run-task \
     --profile $AWS_PROFILE \
     --region $AWS_REGION \
     --cluster $ECS_CLUSTER \
+    --count 1 \
     --task-definition $ECS_CONSOLE_TASK_DEFINITION \
     --network-configuration "awsvpcConfiguration={subnets=[$ECS_SUBNET],securityGroups=[$ECS_SECURITY_GROUP],assignPublicIp=ENABLED}" \
     --overrides "{ \"containerOverrides\": [ { \"name\": \"$IMAGE_NAME\", \"command\": [ \"bin/rails\", \"$2\" ] } ] }"
