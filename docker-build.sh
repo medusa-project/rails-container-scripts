@@ -9,4 +9,5 @@ fi
 source rails-container-scripts/env.sh env-common.list
 source rails-container-scripts/env.sh env-$1.list
 
-docker build -f Dockerfile -t $IMAGE_NAME .
+docker buildx build --platform linux/amd64,linux/arm64 --push \
+    -t $ECR_HOST/$IMAGE_NAME .

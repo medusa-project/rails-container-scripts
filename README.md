@@ -2,11 +2,9 @@ A collection of scripts for working with Docker and AWS ECR/ECS.
 
 # Scripts
 
-* docker-build.sh:      Builds an app image
+* docker-build.sh:      Builds an app image and pushes it to ECR
 * docker-run-task.sh:   Runs a one-off rake task locally in Docker
 * docker-run-webapp.sh: Runs the web app locally in Docker
-
-* ecr-push.sh:          Pushes the app image to ECR
 * ecs-deploy-webapp.sh: Spins up a new web app task(s) based on the
                         `latest`-tagged app image in ECR
 * ecs-run-task.sh:      Runs a one-off rake task in ECS
