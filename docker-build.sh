@@ -11,5 +11,5 @@ source rails-container-scripts/env.sh env-$1.list
 
 eval $(aws ecr get-login --no-include-email --region $AWS_REGION --profile $AWS_PROFILE)
 
-docker buildx build --platform linux/amd64,linux/arm64 --push \
+docker buildx build --platform linux/arm64 --push \
     -t $ECR_HOST/$IMAGE_NAME .
